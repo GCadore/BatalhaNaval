@@ -23,80 +23,152 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="BotaoAcao" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                  <Component id="seletorNavio" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="campoLinha" min="-2" pref="70" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="campoColuna" min="-2" pref="70" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace pref="584" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="105" max="32767" attributes="0"/>
+              <Component id="Start" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="311" max="32767" attributes="0"/>
-              <Component id="seletorNavio" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="campoLinha" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoColuna" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="198" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="Start" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="BotaoAcao" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JComboBox" name="seletorNavio">
+    <Component class="javax.swing.JButton" name="Start">
       <Properties>
-        <Property name="maximumRowCount" type="int" value="3"/>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Navio Pequeno"/>
-            <StringItem index="1" value="Navio Medio"/>
-            <StringItem index="2" value="Navio Grande"/>
-          </StringArray>
+        <Property name="text" type="java.lang.String" value="Come&#xe7;ar"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true"/>
+          </Border>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="seletorNavioActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoLinha">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Linha"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoLinhaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoColuna">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Coluna"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoColunaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="BotaoAcao">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="colocar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAcaoActionPerformed"/>
-      </Events>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="vertical" min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="BotaoAcao" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="seletorNavio" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="campoLinha" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoColuna" min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="avisos" min="-2" pref="110" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="seletorNavio" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="campoLinha" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoColuna" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="BotaoAcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="vertical" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="avisos" min="-2" pref="79" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JComboBox" name="seletorNavio">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Navio Pequeno"/>
+                <StringItem index="1" value="Navio Medio"/>
+                <StringItem index="2" value="Navio Grande"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="seletorNavioActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campoLinha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Linha"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoLinhaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campoColuna">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Coluna"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoColunaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="BotaoAcao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="colocar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAcaoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="vertical">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vertical"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verticalActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="avisos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="avisos"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

@@ -4,16 +4,21 @@
  */
 package batalhanaval2;
 
+import java.util.HashSet;
+
 /**
  *
  * @author Cadore
  */
 public class TelaBatalha extends javax.swing.JFrame {
 
+    private final BatalhaNaval2 jogo;
+
     /**
      * Creates new form TelaBatalha
      */
-    public TelaBatalha() {
+    public TelaBatalha(BatalhaNaval2 jogo) {
+        this.jogo = jogo; // Inicialize a referência de BatalhaNaval2
         initComponents();
     }
 
@@ -26,14 +31,21 @@ public class TelaBatalha extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Start = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         seletorNavio = new javax.swing.JComboBox<>();
         campoLinha = new javax.swing.JTextField();
         campoColuna = new javax.swing.JTextField();
         BotaoAcao = new javax.swing.JButton();
+        vertical = new javax.swing.JToggleButton();
+        avisos = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        seletorNavio.setMaximumRowCount(3);
+        Start.setText("Começar");
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+
         seletorNavio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navio Pequeno", "Navio Medio", "Navio Grande" }));
         seletorNavio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,33 +74,73 @@ public class TelaBatalha extends javax.swing.JFrame {
             }
         });
 
+        vertical.setText("Vertical");
+        vertical.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verticalActionPerformed(evt);
+            }
+        });
+
+        avisos.setText("avisos");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(vertical, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotaoAcao))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(seletorNavio, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(campoLinha, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(avisos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(seletorNavio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoLinha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotaoAcao)
+                            .addComponent(vertical)))
+                    .addComponent(avisos, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotaoAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seletorNavio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(campoLinha, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(584, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(Start)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(311, Short.MAX_VALUE)
-                .addComponent(seletorNavio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoLinha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotaoAcao)
-                .addGap(133, 133, 133))
+                .addContainerGap(198, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Start))
+                .addContainerGap())
         );
 
         pack();
@@ -103,63 +155,74 @@ public class TelaBatalha extends javax.swing.JFrame {
     }//GEN-LAST:event_campoColunaActionPerformed
 
     private void BotaoAcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAcaoActionPerformed
-        // TODO add your handling code here:
+        int linha = Integer.parseInt(campoLinha.getText());
+        int coluna = Integer.parseInt(campoColuna.getText());
+
+        if (jogo.isFasePlanejamento()) {
+            if (jogo.pecas > 0) {
+                if (jogo.posicaoValida(linha, coluna, jogo.tamanho)) {
+                    jogo.posicionarNavio(linha, coluna, jogo.tamanho, jogo.vertical);
+                } else {
+                    System.out.println("posição ja ocupada");
+                }
+            } else{
+            System.out.println("sem peças disponiveis aperte 'start");
+        }
+
+        }
+       
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(jogo.tabuleiroPlayer[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
     }//GEN-LAST:event_BotaoAcaoActionPerformed
 
     private void seletorNavioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seletorNavioActionPerformed
- 
         Object selectedItem = seletorNavio.getSelectedItem();
         String tipoSelecionado = selectedItem.toString();
-        if(tipoSelecionado == "Navio Pequeno"){
-            System.out.println(tipoSelecionado);
+        if (tipoSelecionado == "Navio Pequeno") {
+            jogo.tamanho = 1;
         }
-        else{
-            System.out.println(tipoSelecionado);
+        if (tipoSelecionado == "Navio Medio") {
+            jogo.tamanho = 2;
         }
+        if (tipoSelecionado == "Navio Grande") {
+            jogo.tamanho = 3;
+        }
+        System.out.println(jogo.tamanho);
     }//GEN-LAST:event_seletorNavioActionPerformed
+
+    private void verticalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verticalActionPerformed
+        jogo.setVertical(!jogo.vertical);
+        
+    }//GEN-LAST:event_verticalActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaBatalha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+    public static void main(String[] args) {
+        BatalhaNaval2 jogo = new BatalhaNaval2();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaBatalha().setVisible(true);
+                new TelaBatalha(jogo).setVisible(true); // Passa a referência 'jogo' para TelaBatalha
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoAcao;
-    private javax.swing.JButton botaoAcao;
-    private javax.swing.JButton botaoAcao1;
-    private javax.swing.JButton botaoAcao2;
+    private javax.swing.JButton Start;
+    private javax.swing.JTextField avisos;
     private javax.swing.JTextField campoColuna;
     private javax.swing.JTextField campoLinha;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> seletorNavio;
+    private javax.swing.JToggleButton vertical;
     // End of variables declaration//GEN-END:variables
+
+    private boolean posicaoValida(int linha, int coluna, int tamanho) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
