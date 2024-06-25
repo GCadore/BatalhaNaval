@@ -22,7 +22,12 @@ public class TelaBatalha extends javax.swing.JFrame {
         this.jogo = jogo; // Inicialize a referência de BatalhaNaval2
         initComponents();
         Start.setVisible(false);
+        vertical.setVisible(true);
+        devView.setVisible(false);
+       jogo.computadorJoga(); // Chama a função para posicionar os navios do computador()
+        mostraTabuleiroC();
         mostraTabuleiroP();
+        
     }
 
     /**
@@ -42,6 +47,7 @@ public class TelaBatalha extends javax.swing.JFrame {
         vertical = new javax.swing.JToggleButton();
         avisos = new javax.swing.JTextField();
         Start = new javax.swing.JButton();
+        devView = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -63,6 +69,39 @@ public class TelaBatalha extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        pontosP = new javax.swing.JLabel();
+        pontosC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +145,20 @@ public class TelaBatalha extends javax.swing.JFrame {
 
         avisos.setText("avisos");
 
+        Start.setText("Start");
+        Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartActionPerformed(evt);
+            }
+        });
+
+        devView.setText("DevView");
+        devView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                devViewActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -114,19 +167,24 @@ public class TelaBatalha extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(vertical)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotaoAcao))
+                        .addComponent(campoLinha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seletorNavio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(campoLinha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(avisos, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(devView)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(seletorNavio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(vertical)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotaoAcao)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)))
+                .addComponent(Start, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(avisos, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -135,87 +193,231 @@ public class TelaBatalha extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(seletorNavio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seletorNavio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(devView))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoLinha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BotaoAcao)
                             .addComponent(vertical)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(avisos, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(campoColuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(campoLinha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(avisos, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Start, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        Start.setText("Começar");
-        Start.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StartActionPerformed(evt);
-            }
-        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new java.awt.GridLayout(5, 5, 5, 5));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("jLabel2");
         jPanel2.add(jLabel2);
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("jLabel3");
         jPanel2.add(jLabel3);
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("jLabel3");
         jPanel2.add(jLabel4);
 
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("jLabel3");
         jPanel2.add(jLabel5);
 
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("jLabel3");
         jPanel2.add(jLabel6);
 
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("jLabel3");
         jPanel2.add(jLabel7);
 
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("jLabel3");
         jPanel2.add(jLabel8);
 
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("jLabel3");
         jPanel2.add(jLabel9);
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("jLabel3");
         jPanel2.add(jLabel10);
 
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("jLabel3");
         jPanel2.add(jLabel11);
 
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("jLabel3");
         jPanel2.add(jLabel12);
 
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("jLabel3");
         jPanel2.add(jLabel13);
 
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("jLabel3");
         jPanel2.add(jLabel14);
 
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("jLabel3");
         jPanel2.add(jLabel15);
 
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("jLabel3");
         jPanel2.add(jLabel16);
 
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("jLabel3");
         jPanel2.add(jLabel17);
 
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("jLabel3");
         jPanel2.add(jLabel18);
 
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("jLabel3");
         jPanel2.add(jLabel19);
 
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("jLabel3");
         jPanel2.add(jLabel20);
+
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("jLabel41");
+        jPanel2.add(jLabel21);
+
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("jLabel42");
+        jPanel2.add(jLabel22);
+
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("jLabel43");
+        jPanel2.add(jLabel23);
+
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("jLabel44");
+        jPanel2.add(jLabel24);
+
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("jLabel45");
+        jPanel2.add(jLabel25);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setLayout(new java.awt.GridLayout(5, 5, 5, 5));
+
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("jLabel1");
+        jPanel3.add(jLabel26);
+
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("jLabel2");
+        jPanel3.add(jLabel27);
+
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("jLabel3");
+        jPanel3.add(jLabel28);
+
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("jLabel3");
+        jPanel3.add(jLabel29);
+
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("jLabel3");
+        jPanel3.add(jLabel30);
+
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("jLabel3");
+        jPanel3.add(jLabel31);
+
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("jLabel3");
+        jPanel3.add(jLabel32);
+
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("jLabel3");
+        jPanel3.add(jLabel33);
+
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("jLabel3");
+        jPanel3.add(jLabel34);
+
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("jLabel3");
+        jPanel3.add(jLabel35);
+
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("jLabel3");
+        jPanel3.add(jLabel36);
+
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("jLabel3");
+        jPanel3.add(jLabel37);
+
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setText("jLabel3");
+        jPanel3.add(jLabel38);
+
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("jLabel3");
+        jPanel3.add(jLabel39);
+
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("jLabel3");
+        jPanel3.add(jLabel40);
+
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setText("jLabel3");
+        jPanel3.add(jLabel41);
+
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("jLabel3");
+        jPanel3.add(jLabel42);
+
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setText("jLabel3");
+        jPanel3.add(jLabel43);
+
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setText("jLabel3");
+        jPanel3.add(jLabel44);
+
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("jLabel3");
+        jPanel3.add(jLabel45);
+
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("jLabel41");
+        jPanel3.add(jLabel46);
+
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("jLabel42");
+        jPanel3.add(jLabel47);
+
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("jLabel43");
+        jPanel3.add(jLabel48);
+
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setText("jLabel44");
+        jPanel3.add(jLabel49);
+
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setText("jLabel45");
+        jPanel3.add(jLabel50);
+
+        pontosP.setText("pontosP");
+
+        pontosC.setText("pontosP");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,23 +427,30 @@ public class TelaBatalha extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Start)
-                        .addGap(194, 194, 194))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pontosP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pontosC)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Start))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(pontosP)
+                            .addComponent(pontosC))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -251,21 +460,108 @@ public class TelaBatalha extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 public void mostraTabuleiroP() {
     // Cria uma matriz de JLabels com referências a cada JLabel (assumindo que jLabel1 até jLabel20 existem)
-    JLabel[] labels = {jLabel1, jLabel2, jLabel3, jLabel4, jLabel5,
-                       jLabel6, jLabel7, jLabel8, jLabel9, jLabel10,
-                       jLabel11, jLabel12, jLabel13, jLabel14, jLabel15,
-                       jLabel16, jLabel17, jLabel18, jLabel19, jLabel20};
+    jLabel1.setText(jogo.tabuleiroPlayer[0][0]);
+    jLabel2.setText(jogo.tabuleiroPlayer[0][1]);
+    jLabel3.setText(jogo.tabuleiroPlayer[0][2]);
+    jLabel4.setText(jogo.tabuleiroPlayer[0][3]);
+    jLabel5.setText(jogo.tabuleiroPlayer[0][4]);
+    jLabel6.setText(jogo.tabuleiroPlayer[1][0]);
+    jLabel7.setText(jogo.tabuleiroPlayer[1][1]);
+    jLabel8.setText(jogo.tabuleiroPlayer[1][2]);
+    jLabel9.setText(jogo.tabuleiroPlayer[1][3]);
+    jLabel10.setText(jogo.tabuleiroPlayer[1][4]);
+    jLabel11.setText(jogo.tabuleiroPlayer[2][0]);
+    jLabel12.setText(jogo.tabuleiroPlayer[2][1]);
+    jLabel13.setText(jogo.tabuleiroPlayer[2][2]);
+    jLabel14.setText(jogo.tabuleiroPlayer[2][3]);
+    jLabel15.setText(jogo.tabuleiroPlayer[2][4]);
+    jLabel16.setText(jogo.tabuleiroPlayer[3][0]);
+    jLabel17.setText(jogo.tabuleiroPlayer[3][1]);
+    jLabel18.setText(jogo.tabuleiroPlayer[3][2]);
+    jLabel19.setText(jogo.tabuleiroPlayer[3][3]);
+    jLabel20.setText(jogo.tabuleiroPlayer[3][4]);
+    jLabel21.setText(jogo.tabuleiroPlayer[4][0]);
+    jLabel22.setText(jogo.tabuleiroPlayer[4][1]);
+    jLabel23.setText(jogo.tabuleiroPlayer[4][2]);
+    jLabel24.setText(jogo.tabuleiroPlayer[4][3]);
+    jLabel25.setText(jogo.tabuleiroPlayer[4][4]);
 
-    // Itera pela matriz tabuleiroPlayer e atualiza os JLabels correspondentes
-    int labelIndex = 0;
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-            // Verifica se ainda temos labels para atualizar
-            if (labelIndex < labels.length) {
-                labels[labelIndex].setText(jogo.tabuleiroPlayer[i][j]);
-                labelIndex++;
-            }
-        }
+}
+public void mostraTabuleiroC() {
+    jLabel26.setText(jogo.tabuleiroComputador[0][0]);
+    jLabel27.setText(jogo.tabuleiroComputador[0][1]);
+    jLabel28.setText(jogo.tabuleiroComputador[0][2]);
+    jLabel29.setText(jogo.tabuleiroComputador[0][3]);
+    jLabel30.setText(jogo.tabuleiroComputador[0][4]);
+    jLabel31.setText(jogo.tabuleiroComputador[1][0]);
+    jLabel32.setText(jogo.tabuleiroComputador[1][1]);
+    jLabel33.setText(jogo.tabuleiroComputador[1][2]);
+    jLabel34.setText(jogo.tabuleiroComputador[1][3]);
+    jLabel35.setText(jogo.tabuleiroComputador[1][4]);
+    jLabel36.setText(jogo.tabuleiroComputador[2][0]);
+    jLabel37.setText(jogo.tabuleiroComputador[2][1]);
+    jLabel38.setText(jogo.tabuleiroComputador[2][2]);
+    jLabel39.setText(jogo.tabuleiroComputador[2][3]);
+    jLabel40.setText(jogo.tabuleiroComputador[2][4]);
+    jLabel41.setText(jogo.tabuleiroComputador[3][0]);
+    jLabel42.setText(jogo.tabuleiroComputador[3][1]);
+    jLabel43.setText(jogo.tabuleiroComputador[3][2]);
+    jLabel44.setText(jogo.tabuleiroComputador[3][3]);
+    jLabel45.setText(jogo.tabuleiroComputador[3][4]);
+    jLabel46.setText(jogo.tabuleiroComputador[4][0]);
+    jLabel47.setText(jogo.tabuleiroComputador[4][1]);
+    jLabel48.setText(jogo.tabuleiroComputador[4][2]);
+    jLabel49.setText(jogo.tabuleiroComputador[4][3]);
+    jLabel50.setText(jogo.tabuleiroComputador[4][4]);
+}
+public void mostraTabuleiroCDev() {
+    jLabel26.setText(jogo.tabuleiroComputadorDev[0][0]);
+    jLabel27.setText(jogo.tabuleiroComputadorDev[0][1]);
+    jLabel28.setText(jogo.tabuleiroComputadorDev[0][2]);
+    jLabel29.setText(jogo.tabuleiroComputadorDev[0][3]);
+    jLabel30.setText(jogo.tabuleiroComputadorDev[0][4]);
+    jLabel31.setText(jogo.tabuleiroComputadorDev[1][0]);
+    jLabel32.setText(jogo.tabuleiroComputadorDev[1][1]);
+    jLabel33.setText(jogo.tabuleiroComputadorDev[1][2]);
+    jLabel34.setText(jogo.tabuleiroComputadorDev[1][3]);
+    jLabel35.setText(jogo.tabuleiroComputadorDev[1][4]);
+    jLabel36.setText(jogo.tabuleiroComputadorDev[2][0]);
+    jLabel37.setText(jogo.tabuleiroComputadorDev[2][1]);
+    jLabel38.setText(jogo.tabuleiroComputadorDev[2][2]);
+    jLabel39.setText(jogo.tabuleiroComputadorDev[2][3]);
+    jLabel40.setText(jogo.tabuleiroComputadorDev[2][4]);
+    jLabel41.setText(jogo.tabuleiroComputadorDev[3][0]);
+    jLabel42.setText(jogo.tabuleiroComputadorDev[3][1]);
+    jLabel43.setText(jogo.tabuleiroComputadorDev[3][2]);
+    jLabel44.setText(jogo.tabuleiroComputadorDev[3][3]);
+    jLabel45.setText(jogo.tabuleiroComputadorDev[3][4]);
+    jLabel46.setText(jogo.tabuleiroComputadorDev[4][0]);
+    jLabel47.setText(jogo.tabuleiroComputadorDev[4][1]);
+    jLabel48.setText(jogo.tabuleiroComputadorDev[4][2]);
+    jLabel49.setText(jogo.tabuleiroComputadorDev[4][3]);
+    jLabel50.setText(jogo.tabuleiroComputadorDev[4][4]);
+}
+
+public void verificaVitoria(){
+    if(jogo.pontosP>=9){
+        Start.setVisible(false);
+        vertical.setVisible(false);
+        seletorNavio.setVisible(false);
+        devView.setVisible(true);
+        vertical.setVisible(false);
+        campoLinha.setVisible(false);
+        campoColuna.setVisible(false);
+        avisos.setText("Player ganhou"); //avisa o player
+    }
+    else if(jogo.pontosC>=9){
+        Start.setVisible(false);
+        vertical.setVisible(false);
+        seletorNavio.setVisible(false);
+        devView.setVisible(true);
+        vertical.setVisible(false);
+        campoLinha.setVisible(false);
+        campoColuna.setVisible(false);
+        avisos.setText("Player ganhou"); //avisa o player
     }
 }
 
@@ -281,21 +577,33 @@ public void mostraTabuleiroP() {
         int linha = Integer.parseInt(campoLinha.getText());
         int coluna = Integer.parseInt(campoColuna.getText());
         avisos.setText(" ");
-        if (jogo.isFasePlanejamento()) {
+        if (jogo.isFasePlanejamento()) { // verifica o estado atual do jogo
             if (jogo.pecas > 0) {
-                if (jogo.posicaoValida(linha, coluna, jogo.tamanho)) {
+                if (jogo.posicaoValida(linha, coluna, jogo.tamanho,jogo.tabuleiroPlayer)) { // valida a jogada do player
                     jogo.posicionarNavio(linha, coluna, jogo.tamanho, jogo.vertical);
                     mostraTabuleiroP();
                 } else {
-                    avisos.setText("posição ja ocupada");
+                    avisos.setText("posição ja ocupada"); //avisa o player
                 }
             } else {
-                avisos.setText("sem peças disponiveis aperte 'start' ");
-                Start.setVisible(true);
+                avisos.setText("sem peças disponiveis aperte 'start' ");//avisa o player
+                Start.setVisible(true);//mostra botao start
 
             }
         } else {
-
+          
+            jogo.verificarAtaque(linha, coluna);//ataque do player
+            if(jogo.devView){
+                mostraTabuleiroCDev();
+            }else{
+               mostraTabuleiroC(); 
+            }
+            //atualiza tabuleiro
+            jogo.verificarAtaqueComp();
+            mostraTabuleiroP();
+            pontosC.setText(String.valueOf(jogo.pontosC));
+             pontosP.setText(String.valueOf(jogo.pontosP));
+          
         }
 
         for (int i = 0; i < 5; i++) {
@@ -335,7 +643,19 @@ public void mostraTabuleiroP() {
         jogo.setFasePlanejamento(false);
         BotaoAcao.setText("atirar");
         Start.setVisible(false);
+        seletorNavio.setVisible(false);
+        devView.setVisible(true);
+        vertical.setVisible(false);
     }//GEN-LAST:event_StartActionPerformed
+
+    private void devViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_devViewActionPerformed
+        jogo.setDevView(!jogo.devView);
+        if(jogo.devView){
+             mostraTabuleiroCDev();
+        }else{
+             mostraTabuleiroC();
+        }
+    }//GEN-LAST:event_devViewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,6 +676,7 @@ public void mostraTabuleiroP() {
     private javax.swing.JTextField avisos;
     private javax.swing.JTextField campoColuna;
     private javax.swing.JTextField campoLinha;
+    private javax.swing.JCheckBox devView;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -369,21 +690,51 @@ public void mostraTabuleiroP() {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel pontosC;
+    private javax.swing.JLabel pontosP;
     private javax.swing.JComboBox<String> seletorNavio;
     private javax.swing.JToggleButton vertical;
     // End of variables declaration//GEN-END:variables
 
-    private boolean posicaoValida(int linha, int coluna, int tamanho) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }
